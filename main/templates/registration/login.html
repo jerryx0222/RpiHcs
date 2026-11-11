@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>登入</title>
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f2f2f2; }
+    form { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.15); min-width: 280px; }
+    p { margin: .8rem 0; }
+    input { width: 100%; padding: .5rem; box-sizing: border-box; }
+    button { width: 100%; padding: .6rem; cursor: pointer; }
+    .error { color: #c00; }
+  </style>
+</head>
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <h2>登入</h2>
+    {% if form.errors %}<p class="error">帳號或密碼錯誤</p>{% endif %}
+    <p>{{ form.username.label_tag }}{{ form.username }}</p>
+    <p>{{ form.password.label_tag }}{{ form.password }}</p>
+    <input type="hidden" name="next" value="{{ next }}">
+    <button type="submit">登入</button>
+  </form>
+</body>
+</html>

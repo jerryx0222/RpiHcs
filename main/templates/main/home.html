@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>主頁</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 20vh; }
+    button { font-size: 1.5rem; padding: .8rem 2rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <p>你好，{{ user.get_username }}</p>
+  <button type="button" id="start-unraid">啟動unraid</button>
+  <form method="post" action="{% url 'logout' %}" style="margin-top:2rem">
+    {% csrf_token %}
+    <button type="submit" style="font-size:1rem;padding:.3rem 1rem">登出</button>
+  </form>
+</body>
+</html>
