@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-A small Django 6.1 project (`RpiHcs` project + `main` app) using SQLite (`db.sqlite3` at the repo root). Not a git repository.
+A small Django 6.1 project (`RpiHcs` project + `main` app) using SQLite (`db.sqlite3` at the repo root).
 
 - `RpiHcs/` — project package (settings, root URLconf, wsgi/asgi).
 - `main/` — the only app. Home page (`/`, `@login_required`) shows a "啟動unraid" button that currently has no action wired up. Templates live in `main/templates/` (`main/home.html`, `registration/login.html`).
