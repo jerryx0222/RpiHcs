@@ -136,3 +136,7 @@ MAILERS = {
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
+
+# Shell script run by the "啟動unraid" button (full path). Set in .env on the server.
+UNRAID_SCRIPT = os.environ.get('DJANGO_UNRAID_SCRIPT', str(BASE_DIR / 'scripts' / 'start_unraid.sh'))
+UNRAID_SCRIPT_TIMEOUT = int(os.environ.get('DJANGO_UNRAID_SCRIPT_TIMEOUT', '60'))
